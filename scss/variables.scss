@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+$spacemono: 'Space Mono', monospace;
+
+
+
+// Primary Colors
+$primary-strong-cyan: hsl(172, 67%, 45%);
+
+// Neutral Colors
+$neutral-very-dark-cyan: hsl(183, 100%, 15%);
+$neutral-dark-grayish-cyan: hsl(186, 14%, 43%);
+$neutral-grayish-cyan: hsl(184, 14%, 56%);
+$neutral-light-grayish-cyan: hsl(185, 41%, 84%);
+$neutral-very-light-grayish-cyan: hsl(189, 41%, 97%);
+$neutral-white: hsl(0, 0%, 100%);
+
+
+@mixin style-buttons {
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+	font-family: $spacemono;
+    font-size: 18px;
+	cursor: pointer;
+}
+
+@mixin custom-input {
+    text-align: right;
+    padding: 0 18px;
+    height: 47px;
+    border: none;
+    border-radius: 3px;
+    background-color: $neutral-very-light-grayish-cyan;
+    font-family: $spacemono;
+    font-size: 18px;
+    color: $neutral-very-dark-cyan;
+    cursor: pointer;
+
+    &::placeholder {
+        color: $neutral-grayish-cyan;
+        text-align: left;
+    }
+
+    &:focus {
+        outline: 2px solid $neutral-grayish-cyan;
+    }
+}

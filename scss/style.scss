@@ -1,0 +1,207 @@
+@import 'variables';
+@import 'reset';
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 50px;
+    background-color: $neutral-light-grayish-cyan;
+    font-family: $spacemono;
+}
+
+.header {
+    &__title {
+        margin: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $neutral-dark-grayish-cyan;
+        letter-spacing: 12px;
+    }
+}
+
+.main {
+    min-width: 315px;
+    margin-top: 40px;
+    padding: 40px 30px;
+    background-color: $neutral-white;
+    border-radius: 20px 20px 0 0;
+    @media (min-width: 980px) { 
+        width: 920px;
+        height: 479px;
+        display: flex;
+        border-radius: 20px;
+        padding: 51px 32px 32px 48px;
+      }
+
+
+
+    &__inputSection {
+
+    display: flex;
+    flex-direction: column;
+    color: $neutral-dark-grayish-cyan;
+
+    @media (min-width: 980px) { 
+        height: 416px;
+        width: 412px;
+        margin-right: 48px;
+      }
+    &__label {
+        padding-bottom: 12px;
+    }
+    &__inputBill {
+        @include custom-input;
+    }
+    &__label2 {
+        padding: 39px 0 12px 0;
+    }
+    
+    &__btnWrapper {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        @media (min-width: 980px) { 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+          }
+    
+        &__btn {
+            @include style-buttons;
+            background-color: $neutral-very-dark-cyan;
+            color: $neutral-white;
+            transition: background-color 0.3s, color 0.3s;
+            &:hover {
+                background-color: $primary-strong-cyan;
+                color: $neutral-very-dark-cyan;
+            }
+            
+           
+        }
+        &__inputBtn {
+           @include style-buttons;
+           background-color: $neutral-very-light-grayish-cyan;
+           color: $neutral-very-dark-cyan;
+           text-align: right;
+           padding: 0 18px;
+        &::placeholder {
+           color: $neutral-grayish-cyan;
+          }
+        &:focus {
+            outline: 2px solid $neutral-grayish-cyan;
+        }
+
+    } 
+
+}
+&__label3 {
+    padding: 39px 0 12px 0;
+}
+
+&__numberOfPeopleInput {
+    @include custom-input;
+    background-image: url("../images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+    }
+
+.outputSection {
+    margin-top: 30px;
+    padding: 25px 20px 20px 20px;
+    background-color: $neutral-very-dark-cyan;
+    border-radius: 20px;
+    @media (min-width: 980px) { 
+        height: 100%;
+        width: 412px;
+        margin: 0;
+        padding: 25px 42px 42px 42px;
+      }
+
+    &__tipWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__description {
+        display: flex;
+        flex-direction: column;
+        &__tipAmount {
+         margin: 0;
+         font-size: 16px;
+         color: $neutral-white;
+        }
+
+        &__person {
+           font-size: 15px;
+           color: $neutral-grayish-cyan; 
+        }
+    }
+    &__pricePerPerson {
+        font-size: 28px;
+        color: $primary-strong-cyan;
+        }
+     
+
+    }
+    &__totalWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__description {
+        display: flex;
+        flex-direction: column;
+        &__total {
+         margin: 0;
+         font-size: 16px;
+         color: $neutral-white;
+        }
+
+        &__person {
+           font-size: 15px;
+           color: $neutral-grayish-cyan; 
+        }
+    }
+    &__priceTotal {
+        font-size: 28px;
+        color: $primary-strong-cyan;
+        }
+    
+} 
+&__reset {
+    height: 48px;
+    width: 100%;
+    background-color: $primary-strong-cyan;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $neutral-very-dark-cyan;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    @media (min-width: 980px) { 
+       margin-top: 83px;
+      }
+    &:hover {
+        background-color: $neutral-light-grayish-cyan;
+    }
+}  
+
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+}

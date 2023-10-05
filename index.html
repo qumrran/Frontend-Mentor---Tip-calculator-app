@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">spli<br>tter</h1>
+    </header>
+
+    <main class="main">
+
+        <form class="main__inputSection">
+         <label for="inputBill" class="main__inputSection__label">Bill</label>
+         <input type="number" id="inputBill" class="main__inputSection__inputBill" placeholder="$">
+
+         <label for="inputBtn"  class="main__inputSection__label2">Select Tip %</label>
+        <div class="main__inputSection__btnWrapper">
+             <button class="main__inputSection__btnWrapper__btn b1">5%</button>
+             <button class="main__inputSection__btnWrapper__btn b2">10%</button>
+             <button class="main__inputSection__btnWrapper__btn b3">15%</button>
+             <button class="main__inputSection__btnWrapper__btn b4">25%</button>
+             <button class="main__inputSection__btnWrapper__btn b5">50%</button>
+             <input type="number" class="main__inputSection__btnWrapper__inputBtn" placeholder="Custom">
+
+
+        </div>
+
+        <label for="numberOfPeople" class="main__inputSection__label3">Number of People</label>
+        <input type="number" id="numberOfPeople" class="main__inputSection__numberOfPeopleInput" placeholder="">
+        </form>
+
+        <section class="outputSection">
+        <div class="outputSection__tipWrapper">
+            <div class="outputSection__tipWrapper__description">
+                <h2 class="outputSection__tipWrapper__description__tipAmount">Tip amount</h2>
+                <span class="outputSection__tipWrapper__description__person">/ person</span>
+            </div>
+            <p class="outputSection__tipWrapper__pricePerPerson">$4.27</p>
+        </div>
+
+        <div class="outputSection__totalWrapper">
+            <div class="outputSection__totalWrapper__description">
+                <h2 class="outputSection__totalWrapper__description__total">Total</h2>
+                <span class="outputSection__totalWrapper__description__person">/ person</span>
+            </div>
+            <p class="outputSection__totalWrapper__priceTotal">$32.79</p>
+        </div>
+
+        <button class="outputSection__reset">Reset</button> 
+          
+        </section>
+
+    </main>
+
+
+<script src="./script.js"></script>
+</body>
+</html>
