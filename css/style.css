@@ -127,10 +127,15 @@ body {
 .main__inputSection__btnWrapper__inputBtn:focus {
   outline: 2px solid hsl(184, 14%, 56%);
 }
-.main__inputSection__label3 {
+.main__inputSection__wrapper {
+  display: flex;
+  justify-content: space-between;
   padding: 39px 0 12px 0;
 }
-.main__inputSection__numberOfPeopleInput {
+.main__inputSection__wrapper__alert {
+  color: hsl(14, 76%, 58%);
+}
+.main__inputSection__wrapper__numberOfPeopleInput {
   text-align: right;
   padding: 0 18px;
   height: 47px;
@@ -145,11 +150,11 @@ body {
   background-repeat: no-repeat;
   background-position: 10px center;
 }
-.main__inputSection__numberOfPeopleInput::placeholder {
+.main__inputSection__wrapper__numberOfPeopleInput::placeholder {
   color: hsl(184, 14%, 56%);
   text-align: left;
 }
-.main__inputSection__numberOfPeopleInput:focus {
+.main__inputSection__wrapper__numberOfPeopleInput:focus {
   outline: 2px solid hsl(184, 14%, 56%);
 }
 .main .outputSection {

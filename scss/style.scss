@@ -96,8 +96,15 @@ body {
     } 
 
 }
-&__label3 {
+
+&__wrapper {
+    display: flex;
+    justify-content: space-between;
     padding: 39px 0 12px 0;
+
+&__alert {
+    color: $neutral-red;
+    // display: none;
 }
 
 &__numberOfPeopleInput {
@@ -105,6 +112,7 @@ body {
     background-image: url("../images/icon-person.svg");
     background-repeat: no-repeat;
     background-position: 10px center;
+}
 }
     }
 
