@@ -29,7 +29,7 @@ body {
 }
 
 .main {
-  min-width: 315px;
+  min-width: 375px;
   margin-top: 40px;
   padding: 40px 30px;
   background-color: hsl(0, 0%, 100%);
@@ -58,6 +58,12 @@ body {
 }
 .main__inputSection__label {
   padding-bottom: 12px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.main__inputSection__label__alert {
+  color: hsl(14, 76%, 58%);
+  padding-left: 30px;
 }
 .main__inputSection__inputBill {
   text-align: right;
