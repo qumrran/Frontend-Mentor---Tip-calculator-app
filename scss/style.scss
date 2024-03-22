@@ -22,7 +22,7 @@ body {
 }
 
 .main {
-    min-width: 315px;
+    min-width: 375px;
     margin-top: 40px;
     padding: 40px 30px;
     background-color: $neutral-white;
@@ -50,6 +50,14 @@ body {
       }
     &__label {
         padding-bottom: 12px;
+        display: inline-flex;
+        justify-content: space-between;
+        &__alert {
+            
+            color: $neutral-red;
+            padding-left: 30px;
+            
+        }
     }
     &__inputBill {
         @include custom-input;
