@@ -1,28 +1,15 @@
+// Get DOM elements
 const inputBill = document.querySelector('.main__inputSection__inputBill');
-const inputBillAlert = document.querySelector(
-	'.main__inputSection__label__alert'
-);
-const btnPercent = document.querySelectorAll(
-	'.main__inputSection__btnWrapper__btn'
-);
-const customPercentInput = document.querySelector(
-	'.main__inputSection__btnWrapper__inputBtn'
-);
-const numberOfPeopleInput = document.querySelector(
-	'.main__inputSection__wrapper__numberOfPeopleInput'
-);
-const numberOfPeopleInputAlert = document.querySelector(
-	'.main__inputSection__wrapper__alert'
-);
-const outputTipPerPerson = document.querySelector(
-	'.outputSection__tipWrapper__pricePerPerson'
-);
-const outputPricePerPerson = document.querySelector(
-	'.outputSection__totalWrapper__priceTotal'
-);
+const inputBillAlert = document.querySelector('.main__inputSection__label__alert');
+const btnPercent = document.querySelectorAll('.main__inputSection__btnWrapper__btn');
+const customPercentInput = document.querySelector('.main__inputSection__btnWrapper__inputBtn');
+const numberOfPeopleInput = document.querySelector('.main__inputSection__wrapper__numberOfPeopleInput');
+const numberOfPeopleInputAlert = document.querySelector('.main__inputSection__wrapper__alert');
+const outputTipPerPerson = document.querySelector('.outputSection__tipWrapper__pricePerPerson');
+const outputPricePerPerson = document.querySelector('.outputSection__totalWrapper__priceTotal');
 const resetBtn = document.querySelector('.outputSection__reset');
 
-//funkcja resetująca wyniki
+// Function to reset the results
 function reset() {
 	inputBill.value = 0;
 	customPercentInput.value = 0;
@@ -31,27 +18,28 @@ function reset() {
 	outputPricePerPerson.textContent = '0$';
 }
 
-// listener do resetu
+// Function to validate input to contain only numbers
+function validateInput(input) {
+	const regex = /^[0-9]+$/;
+	return regex.test(input);
+}
 
-resetBtn.addEventListener('click', reset);
-
-
-
+// Function to calculate tip percentage
 function calculateTipPercent(totalPrice, numberOfPeople, percentage) {
-	// Obliczenie kwoty napiwku
+	// Calculate tip amount
 	const tipAmount = (totalPrice * percentage) / 100;
 	const tipPerPerson = tipAmount / numberOfPeople;
 
-	// Wyświetlenie wyników
+	// Display results
 	outputTipPerPerson.textContent = `${tipPerPerson.toFixed(2)}$`;
-	outputPricePerPerson.textContent = `${(
-		tipPerPerson +
-		totalPrice / numberOfPeople
-	).toFixed(2)}$`;
+	outputPricePerPerson.textContent = `${(tipPerPerson + totalPrice / numberOfPeople).toFixed(2)}$`;
 }
 
+// Event listener for reset button
+resetBtn.addEventListener('click', reset);
 
-  inputBill.addEventListener("keyup", () => {
+// Event listeners for input fields and buttons
+inputBill.addEventListener("keyup", () => {
     calculateTipPercent(parseFloat(inputBill.value), parseFloat(numberOfPeopleInput.value), parseFloat(customPercentInput.value));
 });
 
@@ -69,6 +57,21 @@ btnPercent.forEach(btn => {
         const percentage = parseFloat(btn.textContent);
         calculateTipPercent(parseFloat(inputBill.value), parseFloat(numberOfPeopleInput.value), percentage);
 		customPercentInput.value = 0;
-
     });
+});
+
+// Event listener for input validation
+inputBill.addEventListener("input", () => {
+	if(validateInput(inputBill.value)) {
+		inputBillAlert.textContent = " ";
+	} else {
+		inputBillAlert.textContent = "Enter only numbers, not letters.";
+}});
+
+numberOfPeopleInput.addEventListener("input", () => {
+	if(validateInput(numberOfPeopleInput.value)) {
+		numberOfPeopleInputAlert.textContent = " ";
+	} else {
+		numberOfPeopleInputAlert.textContent = "Enter only numbers, not letters";
+	}
 });
